@@ -1,0 +1,17 @@
+sources:
+{
+    secureStorageTest.c
+}
+
+requires:
+{
+    api:
+    {
+        le_secStore.api
+    }
+}
+
+cflags:
+{
+    "-std=c99"
+}

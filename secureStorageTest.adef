@@ -1,0 +1,27 @@
+version: 1.0.0
+sandboxed: true
+start: manual
+executables:
+{
+    secureStorageTest = ( secureStorageTestComponent )
+}
+
+processes:
+{
+    run:
+    {
+        ( secureStorageTest )
+    }
+
+    envVars:
+    {
+        LE_LOG_LEVEL=DEBUG
+    }
+
+    faultAction: stopApp
+}
+
+bindings:
+{
+    secureStorageTest.secureStorageTestComponent.le_secStore -> secStore.le_secStore
+}
